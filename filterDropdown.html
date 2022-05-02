@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: sans-serif;
+        flex-direction: column;
+        grid-gap: 2rem;
+      }
+
+      select {
+        width: 200px;
+        height: 40px;
+        border-radius: 5px;
+      }
+      textarea {
+        width: 200px;
+        height: 300px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <select onchange="checkAge(value)">
+      <option value="All">All</option>
+      <option value="adults">Adults</option>
+      <option value="minors">Minors</option>
+    </select>
+    <div>
+      <textarea id="members"></textarea>
+    </div>
+    <script>
+      const familyMembers = [
+        {
+          name: "Dheeraj",
+          age: 20,
+        },
+        {
+          name: "jagan",
+          age: 22,
+        },
+        {
+          name: "charan",
+          age: 16,
+        },
+      ];
+
+      const adults = familyMembers.filter((member) => member.age >= 18);
+      const minors = familyMembers.filter((member) => member.age < 18);
+      document.getElementById("members").innerHTML = JSON.stringify(
+        familyMembers,
+        null,
+        6
+      );
+
+      const displayAdults = () => {
+        document.getElementById("members").innerHTML = JSON.stringify(
+          adults,
+          null,
+          6
+        );
+      };
+      const displayMinors = () => {
+        document.getElementById("members").innerHTML = JSON.stringify(
+          minors,
+          null,
+          6
+        );
+      };
+
+      const displayAll = () => {
+        document.getElementById("members").innerHTML = JSON.stringify(
+          familyMembers,
+          null,
+          6
+        );
+      };
+
+      const checkAge = () => {
+        const age = document.querySelector("select").value;
+        if (age === "adults") {
+          displayAdults();
+        } else if (age === "minors") {
+          displayMinors();
+        } else {
+          displayAll();
+        }
+      };
+    </script>
+  </body>
+</html>
