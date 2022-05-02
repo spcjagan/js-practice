@@ -17,9 +17,9 @@
 // console.log(sum(10,20))
 //  */
 
-const sum = () => {
-  return 2+3;
-}
+// const sum = () => {
+//   return 2+3;
+// }
 
 
 // console.log(name1);
@@ -96,11 +96,11 @@ const sum = () => {
     // 12
     
     //  const obj = { name: 'Ashok'};
-    // console.log(obj.name + "asdhok", 12);
-    // [object Object]asdhok 
+    //  console.log(obj.name + "asdhok", 12);
+
 
     // const obj = { name: 'Ashok'};
-    // console.log(obj, "asdf", obj.name === "Ashok", 20 === 30);
+    // console.log(obj, "asdf", obj.name === "Ashok", 20 == 30);
 
     // ternary, && , || 
 
@@ -131,16 +131,16 @@ const sum = () => {
     //     console.log("Param 2:::", param3);
     // }
     
-    // function func(param1, param2) {
+    // function func(param1, param2,param3="Blgr") {
     //     console.log("Param1 ::", param1);
     //     console.log("Param 2:::", param2);
-    //     console.log("Param 2:::", param2);
+    //     console.log("Param 3:::", param3);
     // }
-
+    // func("Ashok", 30);
     // const func = (param1, param2, param3 = 'Plvd') => {
     //     console.log("Param1 ::", param1);
     //     console.log("Param 2:::", param2);
-    //     console.log("Param 2:::", param3);
+    //     console.log("Param 3:::", param3);
     // }
 
     // func("Ashok", 30);
@@ -154,10 +154,17 @@ const sum = () => {
     //     const city = obj.address && obj.address.city || 'Bangalore'
     //     console.log(' DOb: ', dob, ' City', city);
     // }
+    // const details = {
+    //   name: 'Ashok',
+    //   type: 'student'
+    // };
+    // func(details);
+    // console.log(func(obj));
     // func({
     //     name: 'Ashok',
     //     type: 'student'
     // })
+
     // func({
     //     name: 'Ashok',
     //     type: 'student',
@@ -175,21 +182,44 @@ const sum = () => {
     // func(details);
 
 
-    // const func = (obj) => {
-    //     if (typeof obj === 'undefined') {
-    //         console.log('Object is not defined')
-    //         return;
-    //     }
-    //     // const isStudent = (obj.type === 'student' ) ? true : false; 
-    //     // if (isStudent) console.log("User is student");
+    const func = (obj) => {
+        if (typeof obj === 'undefined') {
+            console.log('Object is not defined')
+            return;
+        }
+        // const isStudent = (obj.type === 'student' ) ? true : false; 
+        // if (isStudent) console.log("User is student");
 
-    //     if (obj.type === 'student') console.log("User is student");
-
-    //     const dob = obj.dob || 20;
-    //     const city = obj.address && obj.address.city || 'Bangalore'
-    //     console.log(' DOb: ', dob, ' City', city);
-    // }
-    // func()
+        if (obj.type === 'student') console.log("User is student");
+        if (obj.age >= 18){
+          console.log("User is Adult");
+        }else{
+          console.log("User is not an Adult");
+       }
+        const name = obj.name || 'Mohan';
+        const dob = obj.dob || 20;
+        const city = obj.address && obj.address.city || 'Bangalore'
+        console.log('Name:',name,' DOb: ', dob, ' City:', city);
+    }
+    // func({
+    //   name:"Jagan",
+    //   type:"student",
+    //   age : 17,
+    //   dob : "10 Sep 2000",
+    //   address: {
+    //     city :"Kadapa"
+    //   }
+    // })
+    const details =  {
+      name:"Jagan",
+      type:"student",
+      age : 17,
+      dob : "10 Sep 2000",
+      address: {
+        city :"Kadapa"
+      }
+    }
+    func(details);
 
     // const func = (obj) => {
     //     if (typeof obj !== 'object') {
