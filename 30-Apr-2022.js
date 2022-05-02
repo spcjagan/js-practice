@@ -7,8 +7,6 @@
 // }
 // console.log(sum(10,20))
 
-// transpiler - babel.js 
-
 // //test.js 
 // /* var num = 20;
 // console.log(num)
@@ -18,6 +16,10 @@
 // }
 // console.log(sum(10,20))
 //  */
+
+const sum = () => {
+  return 2+3;
+}
 
 
 // console.log(name1);
