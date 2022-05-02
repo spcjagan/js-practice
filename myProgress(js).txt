@@ -1,0 +1,609 @@
+Todo: 29 Apr, 2022
+- Objects 
+    - Array of objects 
+    - object iteration 
+    - Prototype chaining 
+- scopes, variable declarations, functions
+- Arrays 
+- map, reduce, filder 
+- rest vs spread
+- cloud computing 
+- software atchitecture
+- Design patterns 
+
+
+* Variable declaration:-
+
+  -Variables are containers for storing data (storing data values).
+   var, let, const
+ - Always declare JavaScript variables with var,let, or const.
+
+ - The var keyword is used in all JavaScript code from 1995 to 2015.
+
+ - The let and const keywords were added to JavaScript in 2015.
+
+If you want your code to run in older browser, you must use var.
+
+Sample snippet for variable declaration:
+     
+var name='jagan';
+let age=21;
+const gender='male';
+console.log(name);//jagan
+console.log(age);//21
+console.log(gender);//male
+
+
+-------------------------------------------------------*Object*---------------------------------------------------
+ JavaScript object is a non-primitive data-type that allows you to store multiple collections of data.
+
+-Object creation:-
+// object
+const student = {
+    firstName: 'ram',
+    class: 10
+};
+
+const person = {
+    firstName: 'John',
+    lastName: 'Doe'
+};
+
+
+// using spread ...
+let p1 = {
+    ...person
+};
+//Object.assign & spread
+
+
+let details = {
+        name: "jagan",
+        age:21,
+        sex:{
+            type1:'male',
+            type2:'female'
+        }
+    }
+    
+    let d1 = {
+        ...details
+    };
+    let d2 =Object.assign({},details);
+    
+    console.log(details.sex.type2);//female
+    
+    console.log(d1);// {name: "jagan",age:21,sex:{type1:'male',type2:'female'}}
+    console.log(d2);// {name: "jagan",age:21,sex:{type1:'male',type2:'female'}}
+
+-Nested objects :
+
+// nested object
+const student = { 
+    name: 'John', 
+    age: 20,
+    marks: {
+        science: 70,
+        math: 75
+    }
+}
+
+// accessing property of student object
+console.log(student.marks); // {science: 70, math: 75}
+
+// accessing property of marks object
+console.log(student.marks.science); // 70
+
+-Override a key
+
+
+---------------code for create() method, assign() method and spread operator in Object-------------------------------
+let details = {
+    name: "jagan",
+    age:21,
+    gender:'male'
+}
+
+let info = Object.create(details);
+info.name = 'Sai Pallavi';
+info.age = 22;
+info.gender = 'female';
+//spread for details object
+let d1 = {
+    ...details
+};
+//assign for details object
+let d2 =Object.assign({},details);
+//spread operator for info object
+let I1 = {
+    ...info
+}
+//assign for info operator
+let I2=Object.assign({},info)
+
+console.log(details);
+console.log(d1);
+console.log(d2);
+console.log(info);
+console.log(I1);
+console.log(I2);
+
+//Output:
+{ name: 'jagan', age: 21, gender: 'male' }
+{ name: 'jagan', age: 21, gender: 'male' }
+{ name: 'jagan', age: 21, gender: 'male' }
+{ name: 'Sai Pallavi', age: 22, gender: 'female' }
+{ name: 'Sai Pallavi', age: 22, gender: 'female' }
+{ name: 'Sai Pallavi', age: 22, gender: 'female' }
+
+
+---------------------------------------------------------------------*Data types*----------------------------------------------------------------
+
+->String:A string (or a text string) is a series of characters like "Jagan".
+
+-Strings are written with quotes. You can use single or double quotes. 
+
+  Sample snippet for string datatype
+
+   const name="jagan";
+   console.log(name);//jagan
+
+ ->Number:JavaScript has only one type of numbers.
+
+ -Numbers can be written with, or without decimals.
+    
+Sample snippet for number datatype
+
+  let x1 = 34.00;     // Written with decimals
+  let x2 = 34;        // Written without decimals
+
+ Boolean:Booleans can only have two values: true or false.
+  
+  Sample snippet for boolean datatype 
+      
+let x=5;
+let y=5;
+let z=10;
+console.log(x==y);//true
+console.log(x==z);//false
+
+* Typeof operator:Returns the type of a variable
+ 
+Sample snippet for typeof operator
+
+let x=5;
+const name='jagan';
+let z;
+console.log(typeof(x));//number
+console.log(typeof(name));//string
+console.log(typeof(z));//undefined
+
+
+* Operators
+ 
+-Logical operators:
+
+Operator	Description
+&&	      logical and
+||	      logical or
+!	      logical not
+ 
+Sample code for logical and :
+
+let age=17;
+if(age<18&&age>16)
+console.log("Teenage");  //output:teenage
+
+Sample code for logical or :
+
+let age=18;
+if(age==18||age<22)
+console.log("Adult");  //output:Adult
+
+Sample code for logical not :
+
+let age=16;
+if(age!=18)
+console.log("Minor");  //output:Minor
+
+-Ternary operator:JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.
+
+- Syntax:variablename = (condition) ? value1:value2 
+
+Sample code for ternary operator :
+
+let age = 15;
+let result =(age >= 18) ? "You are eligible to vote." : "You are not eligible to vote yet";
+console.log(result);// You are not eligible to vote yet
+
+-Rest operator:The rest operator is used to put the rest of some specific user-supplied values into a JavaScript array.
+
+ Sample code for rest operator:
+  
+ function showName(firstName, lastName, ...titles) {
+  alert( firstName + ' ' + lastName ); // Julius Caesar
+
+  // the rest go into titles array
+  // i.e. titles = ["Consul", "Imperator"]
+  alert( titles[0] ); // Consul
+  alert( titles[1] ); // Imperator
+  alert( titles.length ); // 2
+}
+
+showName("Julius", "Caesar", "Consul", "Imperator");
+
+Note: The rest parameter have to be the last argument, as its job is to collect all the remaining arguments into an array.
+ So having a function definition like the code below doesn’t make any sense and will throw an error. 
+
+spread operator: The spread operator (...) helps you expand iterables into individual elements.
+
+Sample code for spread operator:
+
+const myName = ["Sofela", "is", "my"];
+const aboutMe = ["Oluwatobi", ...myName, "name."];
+
+console.log(aboutMe);
+
+// The invocation above will return:
+[ "Oluwatobi", "Sofela", "is", "my", "name." ]
+
+
+*Difference between spread and rest operators:
+
+>The main difference between rest and spread is that the rest operator puts the rest of some specific user-supplied values into a JavaScript array.
+But the spread syntax expands iterables into individual elements.
+
+------------------------------------------------------------------*Functions*-------------------------------------------------------------------------
+:A JavaScript function is a block of code designed to perform a particular task.
+
+            A JavaScript function is executed when "something" invokes it (calls it).
+
+ Sample code function declaration:
+
+<html>
+<body>
+<script>  
+function msg(){  
+alert("hello! this is message");  
+}  
+</script>  
+<input type="button" onclick="msg()" value="call function"/>  
+</body>
+</html>
+
+-JavaScript Function Arguments:We can call function by passing arguments. Let’s see the example of function that has one argument.
+
+<html>
+<body>
+<script>  
+function getcube(number){  
+alert(number*number*number);  
+}  
+</script>  
+<form>  
+<input type="button" value="click" onclick="getcube(4)"/>  
+</form>  
+</body>
+</html>
+
+
+-Function with Return value:We can call function that returns a value and use it in our program. Let’s see the example of function that returns value.
+
+
+<html>
+<body>
+<script>  
+function getInfo(){  
+return "hello javatpoint! How r u?";  
+}  
+</script>  
+<script>  
+document.write(getInfo());  
+</script>  
+</body>
+</html>
+
+ 
+-JavaScript with Function object:In JavaScript, the purpose of Function constructor is to create a new Function object. It executes the code globally.
+                                 However, if we call the constructor directly, a function is created dynamically but in an unsecured way.
+
+ Syntax: new Function ([arg1[, arg2[, ....argn]],] functionBody)  
+
+ 
+ 
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+var add=new Function("num1","num2","return num1+num2");
+document.writeln(add(2,5));
+</script>
+
+</body>
+</html>
+
+ 
+ 
+
+Arrow functions, function currying 
+-------------------------------------------------------------*Arrays*-------------------------------------------------------------------------
+:The Array object, as with arrays in other programming languages, enables storing a collection of multiple items under a single variable name, 
+ and has members for performing common array operations.
+
+Create an array:
+
+let movie=['director','producer','hero','music'];
+ 
+-push (): Add items to the end of an array
+
+let movie=['director','producer','hero','music'];
+movie.push('script');
+console.log(movie);//[ 'director', 'producer', 'hero', 'music', 'script' ]
+
+-pop():Remove an item from the end of an array
+let movie=['director','producer','hero','music'];
+movie.pop('script');
+console.log(movie);//[ 'director', 'producer', 'hero' ]
+
+
+
+-slice():The slice() method extracts a section of a string and returns it as a new string, without modifying the original string.
+
+const str = 'Jagan Mohan ';
+
+console.log(str.slice(3));//  " an Mohan"
+
+
+console.log(str.slice(4, 9));// "n Moh"
+
+console.log(str.slice(-4));// "han"
+
+console.log(str.slice(-9, -5));// "an M"
+
+
+
+-concat():The concat() method concatenates the string arguments to the calling string and returns a new string.
+
+let greet = 'Hello'
+let firstName = 'Jack';
+let lastName = 'Rose';
+let fullName = greet.concat(" ",firstName," & " ,lastName);
+console.log(fullName);   
+
+let hello = 'Hello, '
+console.log(hello.concat('Kevin', '. Have a nice day.'))
+// Hello, Kevin. Have a nice day.
+
+let greetList = ['Hello', ' ', 'Venkat', '!']
+"".concat(...greetList)  // "Hello Venkat!"
+
+console.log(hello.concat({}));  // [object Object]
+console.log(firstName.concat([]));  // ""
+"".concat(null)  // "null"
+"".concat(true)  // "true"
+"".concat(4, 5)  // "45"
+
+
+
+
+
+-filter():The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+
+1.
+const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+function isPrime(num) {
+  for (let i = 2; num > i; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return num > 1;
+}
+
+console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
+
+
+2.
+
+const ages = [32, 33, 16, 40];
+const result = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
+console.log(result);// [32,33,40]
+
+
+-map():
+>map() creates a new array from calling a function for every array element.
+
+>map() calls a function once for each element in an array.
+
+>map() does not execute the function for empty elements.
+
+>map() does not change the original array.
+
+
+const num =[10,2,24];
+
+    const result = num.map(multiplyByTen);
+
+    function multiplyByTen(num) {
+
+    return num*10;
+    }
+    console.log(result);// [100,20,240]'
+
+
+
+-reduce():The reduce() method executes a user-supplied "reducer" callback function on each element of the array, in order,
+ passing in the return value from the calculation on the preceding element.
+ The final result of running the reducer across all elements of the array is a single value.
+
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+// expected output: 10
+
+
+
+
+---------------------------------------------------------------Scope--------------------------------------------------
+
+⇢ Scope in JavaScript determines the accessibility (where a variable can be used) of variables in JavaScript.
+
+
+-Global scope:
+⇢ Global scope means if a variable is declared outside any curly brackets that variable has a global scope and can be used anywhere in the file. 
+  
+let a = "hey"
+
+function greet(){
+console.log(a);
+}
+greet();//hey
+
+
+-Function scope:
+
+⇢ In Function Scope variables defined inside a function are not accessible from outside the function.
+
+function myFunction() {
+  const carName = "Volvo";   // Function Scope
+}
+
+
+-Block scope:
+
+>Before ES6 (2015), JavaScript had only Global Scope and Function Scope.
+
+>ES6 introduced two important new JavaScript keywords: let and const.
+
+>These two keywords provide Block Scope in JavaScript.
+
+>Variables declared inside a { } block cannot be accessed from outside the block:
+
+>Variables declared with the var keyword can NOT have block scope.
+
+>Variables declared inside a { } block can be accessed from outside the block.
+
+function displayName(){
+
+let name ="jagan";
+// name can be used here
+}
+// name can't be used here
+
+-------------------------------------------------------------------------This keyword----------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------Add & Remove attributes---------------------------------------------------------------------
+>Sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified 
+ name and value.
+
+>To get the current value of an attribute, use getAttribute(); to remove an attribute, call removeAttribute().
+
+...HTML CODE...
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css"> 
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id = "add">Add</button>
+        <button id = "remove">Remove</button>
+        <input type = "text">
+    </div>
+    <script src = "test.js"></script>
+</body>
+</html>
+
+...CSS CODE...
+
+div{
+    text-align: center;
+}
+button{
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+input{
+    display: block;
+    padding: 10px 20px;
+    margin: 10px auto;
+}
+
+...JS CODE...
+
+let btnAdd = document.querySelector('#add');
+let btnRemove = document.querySelector('#remove');
+let input = document.querySelector('input');
+
+btnAdd.addEventListener('click', () =>{
+    input.setAttribute('readonly',true);
+});
+
+
+btnRemove.addEventListener('click', () =>{
+
+    input.removeAttribute('readonly');
+});
+
+
+Extent an object 
+Object iteration 
+Clone objects
+Copy objects 
+Prototyping 
+Prototype attribute, chaining
+---------------------------------------------------------------------------Closures-------------------------------------------------------------------------
+-JavaScript Closures
+
+In JavaScript, closure provides access to the outer scope of a function from inside the inner function, even after the outer function has closed. 
+
+
+
+    function greet(){
+
+        let name = 'jagan';
+
+        function displayName()
+        {
+            return 'Hi' +" "+name;
+        }
+        return displayName;
+    }
+
+    const g1 = greet();
+    console.log(g1);// [Function: displayName]
+    console.log(g1());// Hi jagan 
+
+
+
+
+Classes 
+Create a class
+Constructor 
+Add method 
+Create instance and access the method
+Module.exports 
+
+
+For your reference - I’ve prepared my own notes for each concepts, you can take a look if you want.
+  https://github.com/ashok-kumar/js-sources/blob/master/js-concepts.md
