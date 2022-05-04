@@ -1,0 +1,67 @@
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <link rel="shortcut icon" href="/js-practice/sample-ico.png" />
+            <link rel="stylesheet" href="/html-4-may-2022/sample.css" />
+            <!-- <style>
+                .testDiv {
+                    border: 1px solid red;
+                    margin: 10px;
+                }
+                div {
+                    background-color: gray;
+                }
+                .testDiv {
+                    background-color: orange;
+                }
+                #div2 {
+                    background-color: green;
+                }
+            </style> -->
+            <script type="text/javascript" src="/html-4-may-2022/script.js" ></script>
+            <script type="text/javascript" src="/html-4-may-2022/libs/sum.js"></script>
+        </head>
+        <body>
+            <div>
+                <input 
+                    type="text" 
+                    class="textbox" 
+                    id="userName" 
+                    name="userName"
+                    oninput="inputMethod()"
+                    onblur="blurMetho()"  />
+                <button type="button" class="my-button" id="btn" onclick="logName()" >Submit</button>
+            </div>
+            <div class="testDiv" id="div2">
+                Testing Div 2
+            </div>
+            <div class="testDiv" id="div3">
+                Testing Div 3
+            </div>
+            <script type="text/javascript">
+          
+
+                // document.getElementById('btn').addEventListener('click', function(event){
+                //     console.log('Button clicked')
+                // })
+
+                // const buttonElement = document.getElementById('btn');
+                // // buttonElement.__proto__ // document
+                // // buttonElement.__proto__.__proto__ // Object
+                // // buttonElement.__proto__.__proto__.__proto__ // null
+                // const handler = (event) => {
+                //     console.log('Button clicked')
+                // }
+                // buttonElement.addEventListener('click', handler)
+
+
+                // document.getElementById('btn').addEventListener('click', (event) => 
+                //     console.log('Button clicked')
+                // )
+            </script>
+        </body>
+    </html>
