@@ -266,22 +266,22 @@
     // console.log(obj.getName());
 
     // call and apply 
-    const obj = {
-        name: 'Ashok',
-        age: 21,
-        printName: function() {
-            console.log('Name is', this.name);
-        },
-        // getName: function() {
-        //     return this.name;
-        //     return this.age;
-        // }
-        printAge: function() {
-            console.log('Age is:',this.age);
-        }
-    };
-    const name = obj.printName.call({name: 'Jagan'});
-    const age = obj.printAge.call({age: 21});
+    // const obj = {
+    //     name: 'Ashok',
+    //     age: 21,
+    //     printName: function() {
+    //         console.log('Name is', this.name);
+    //     },
+    //     // getName: function() {
+    //     //     return this.name;
+    //     //     return this.age;
+    //     // }
+    //     printAge: function() {
+    //         console.log('Age is:',this.age);
+    //     }
+    // };
+    // const name = obj.printName.call({name: 'Jagan'});
+    // const age = obj.printAge.call({age: 21});
     // console.log(name);
     // console.log(age);
 
@@ -345,7 +345,7 @@
     //     },
     //     {
     //         name: 'asdfasdf',
-    //         id: 3
+    //         id: 2
     //     },
     //     {
     //         name: 'Jagan',
@@ -355,8 +355,8 @@
 
     // for(let i = 0 ;i < arr.length ; i++ ) {
     //     const element = arr[i];
-    //     // console.log(element)
-    //     console.log(element.name)
+    //     console.log(element);
+    //     console.log(element.name);
     // }
 
     // const students = [
@@ -383,6 +383,35 @@
     //     }
     // }
     // console.log(students);
+
+
+    // const arr = [
+    //     {
+    //       director:"Prashant Neel",
+    //       age:38,
+    //       movie1:"Ugram",
+    //       movie2:"KGF",
+    //       hits: 2
+    //      },
+    //      {
+    //        musicDirector:"Ravi Barsur",
+    //        age:35,
+    //        movie1:"Ugram",
+    //        movie2:"KGF",
+    //        hits: 2
+    //      }
+    //      ]
+    //      for (let i=0;i<arr.length;i++){ 
+    //        const elements =arr[i];
+    //        if (elements.hits===2){
+    //            elements.isSuccessfull= true;
+    //         }else{
+    //             elements.isSuccessfull=false;
+    //         }
+    //        //console.log(elements.movie1);
+    //      }
+    //      console.log(arr);
+
 
     
     // const students = [
@@ -446,10 +475,10 @@
     // ];
 
 
-    // // const fun = (input) => {
-    // //     console.log(input)
-    // // }
-    // // fun(2)
+    // const fun = (input) => {
+    //     console.log(input)
+    // }
+    // fun(2)
     // students.map();
 
     // const output = students.map((element) => {
@@ -469,6 +498,39 @@
     //     return element;
     // });
     // console.log(outputArray);
+
+    // const array = [
+    //     {
+    //       course:"School",
+    //       passedOutAge: 16,
+    //       schoolName:"Vivekananda",
+    //       score:97
+    //     },
+    //     {
+    //       course:"High School",
+    //       passedOutAge: 18,
+    //       highSchoolName:"SriChaitanya",
+    //       score:94
+    //     },
+    //     {
+    //       course:"B.Tech",
+    //       passedOutAge: 22,
+    //       collegeName:"Annamacharya",
+    //       score:70
+    //     }
+    //   ]
+    //   const changes = array.map((score) =>{
+    //       for(let i=0;i<array.length;i++){
+    //         if(array[i].score > 90){
+    //             console.log("Good score");
+    //             }
+    //             else{
+    //                 console.log("Average score");
+    //             }
+    //  }
+    //       return "condition checked";
+    //   });
+    //   console.log(changes);
 
     // const arr = [1,2,3,4,5];
     // const outputArray = arr.map((element) => {
