@@ -182,25 +182,25 @@
     // func(details);
 
 
-    const func = (obj) => {
-        if (typeof obj === 'undefined') {
-            console.log('Object is not defined')
-            return;
-        }
-        // const isStudent = (obj.type === 'student' ) ? true : false; 
-        // if (isStudent) console.log("User is student");
+    // const func = (obj) => {
+    //     if (typeof obj === 'undefined') {
+    //         console.log('Object is not defined')
+    //         return;
+    //     }
+    //     // const isStudent = (obj.type === 'student' ) ? true : false; 
+    //     // if (isStudent) console.log("User is student");
 
-        if (obj.type === 'student') console.log("User is student");
-        if (obj.age >= 18){
-          console.log("User is Adult");
-        }else{
-          console.log("User is not an Adult");
-       }
-        const name = obj.name || 'Mohan';
-        const dob = obj.dob || 20;
-        const city = obj.address && obj.address.city || 'Bangalore'
-        console.log('Name:',name,' DOb: ', dob, ' City:', city);
-    }
+    //     if (obj.type === 'student') console.log("User is student");
+    //     if (obj.age >= 18){
+    //       console.log("User is Adult");
+    //     }else{
+    //       console.log("User is not an Adult");
+    //    }
+    //     const name = obj.name || 'Mohan';
+    //     const dob = obj.dob || 20;
+    //     const city = obj.address && obj.address.city || 'Bangalore'
+    //     console.log('Name:',name,' DOb: ', dob, ' City:', city);
+    // }
     // func({
     //   name:"Jagan",
     //   type:"student",
@@ -210,16 +210,16 @@
     //     city :"Kadapa"
     //   }
     // })
-    const details =  {
-      name:"Jagan",
-      type:"student",
-      age : 17,
-      dob : "10 Sep 2000",
-      address: {
-        city :"Kadapa"
-      }
-    }
-    func(details);
+    // const details =  {
+    //   name:"Jagan",
+    //   type:"student",
+    //   age : 17,
+    //   dob : "10 Sep 2000",
+    //   address: {
+    //     city :"Kadapa"
+    //   }
+    // }
+    // func(details);
 
     // const func = (obj) => {
     //     if (typeof obj !== 'object') {
@@ -266,17 +266,24 @@
     // console.log(obj.getName());
 
     // call and apply 
-    // const obj = {
-    //     name: 'Ashok',
-    //     printName: function() {
-    //         console.log('Name is', this.name);
-    //     },
-    //     getName: function() {
-    //         return this.name;
-    //     }
-    // };
-    // const name = obj.getName.call({name: 'Jagan'});
+    const obj = {
+        name: 'Ashok',
+        age: 21,
+        printName: function() {
+            console.log('Name is', this.name);
+        },
+        // getName: function() {
+        //     return this.name;
+        //     return this.age;
+        // }
+        printAge: function() {
+            console.log('Age is:',this.age);
+        }
+    };
+    const name = obj.printName.call({name: 'Jagan'});
+    const age = obj.printAge.call({age: 21});
     // console.log(name);
+    // console.log(age);
 
     // const obj = {
     //     name: 'Ashok',
