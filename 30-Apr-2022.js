@@ -622,18 +622,19 @@
     // }
     // console.log(fullDetails);
 
-    // const arr = [1,2,3];
-    // const arr2 = ["Ashok", "Kumar"];
-    // const arr3 = [{
-    //     college : "JNTU"
-    // }];
+    const arr = [1,2,3];
+    const arr2 = ["Ashok", "Kumar"];
+    const arr3 = [{
+        university : "JNTU",
+        college : "Annamacharya"
+    }];
    
-    // const arr4 = [
-    //     ...arr, 
-    //     ...arr2, 
-    //     ...arr3,
-    // ];
-    // console.log(arr4)
+    const arr4 = [
+        ...arr, 
+        ...arr2, 
+        ...arr3,
+    ];
+    console.log(arr4)
 
     // const logName = ([name, ...remaining]) => {
     //     console.log("Name is", name);
@@ -643,9 +644,10 @@
     // const arr = ['Ashok', 'bangalore', 'Ka', 'India'];
     // logName(arr);
 
+
     // const logName = ([name, city, ...remaining]) => {
     //     console.log("Name is", name);
-    //     console.log("Ctity is", city);
+    //     console.log("City is", city);
     //     console.log('Remaining: :', remaining)
     // };
 
@@ -654,7 +656,7 @@
  
 
     // const logName = ({name, ...rest}) => {
-    //     console.log('remaingin::', rest)
+    //     console.log('remainging::', rest)
     // }
     // const obj = {
     //     name: 'Ashok',
