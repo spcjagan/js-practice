@@ -33,7 +33,7 @@
                     id="userName" 
                     name="userName"
                     oninput="inputMethod()"
-                    onblur="blurMetho()"  />
+                    onblur="blurMethod()"  />
                 <button type="button" class="my-button" id="btn" onclick="logName()" >Submit</button>
             </div>
             <div class="testDiv" id="div2">
@@ -44,10 +44,11 @@
             </div>
             <script type="text/javascript">
           
-
-                // document.getElementById('btn').addEventListener('click', function(event){
-                //     console.log('Button clicked')
-                // })
+                function logName(){
+                document.getElementById('btn').addEventListener('click', function(event){
+                    console.log('Button clicked')
+                })
+            }
 
                 // const buttonElement = document.getElementById('btn');
                 // // buttonElement.__proto__ // document
